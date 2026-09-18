@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditia Nugraha - Portofolio Teknik Instalasi Listrik & Operator Wiring Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        electric: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        },
+                        amberGold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and ambient visual effects */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284c7;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(2, 132, 199, 0.4);
+        }
+        .amber-glow {
+            box-shadow: 0 0 20px -3px rgba(245, 158, 11, 0.35);
+        }
+        .tech-bg {
+            background-image: radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased tech-bg selection:bg-electric-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo / Brand -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-electric-600 to-amberGold-500 p-0.5 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+                            <i class="fa-solid fa-bolt text-amberGold-400 text-lg group-hover:animate-bounce"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold tracking-tight text-white block leading-none">ADITIA NUGRAHA</span>
+                        <span class="text-xs font-mono text-electric-400 font-medium">TEKNIK INSTALASI LISTRIK</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="#profil" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-electric-400 hover:bg-slate-800/60 rounded-lg transition-colors">Profil</a>
+                    <a href="#pengalaman" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-electric-400 hover:bg-slate-800/60 rounded-lg transition-colors">Pengalaman</a>
+                    <a href="#galeri" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-electric-400 hover:bg-slate-800/60 rounded-lg transition-colors">Galeri Kerja</a>
+                    <a href="#kalkulator" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-electric-400 hover:bg-slate-800/60 rounded-lg transition-colors">Simulasi & Kalkulator</a>
+                    <a href="#kontak" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-electric-400 hover:bg-slate-800/60 rounded-lg transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button onclick="downloadCV()" class="flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-amberGold-400 border border-amberGold-500/40 hover:border-amberGold-400 bg-amberGold-500/10 hover:bg-amberGold-500/20 rounded-xl transition-all shadow-sm">
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                        <span>Download CV</span>
+                    </button>
+                    <a href="#kontak" class="flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-900 bg-electric-500 hover:bg-electric-400 rounded-xl transition-all shadow-lg shadow-electric-500/20">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Rekrut Saya</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-2">
+            <a href="#profil" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 rounded-lg">Profil</a>
+            <a href="#pengalaman" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 rounded-lg">Pengalaman & Project</a>
+            <a href="#galeri" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 rounded-lg">Galeri Kerja</a>
+            <a href="#kalkulator" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 rounded-lg">Simulator & Kalkulator</a>
+            <a href="#kontak" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 rounded-lg">Kontak & Rekrut</a>
+            <div class="pt-4 flex flex-col gap-2">
+                <button onclick="downloadCV()" class="w-full py-2.5 text-center text-xs font-bold uppercase tracking-wider text-amberGold-400 border border-amberGold-500/40 bg-amberGold-500/10 rounded-xl">
+                    <i class="fa-solid fa-file-arrow-down mr-2"></i> Download CV Resume
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative pt-12 pb-20 md:py-28 overflow-hidden">
+        <!-- Ambient background glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-electric-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-72 h-72 bg-amberGold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-electric-500/30 text-electric-400 text-xs font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        SIAP BEKERJA & REKUTMEN AKTIF
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Aditia Nugraha
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-electric-400 via-cyan-300 to-amberGold-400 mt-2">
+                            Operator Wiring Panel & Teknisi Listrik
+                        </span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Lulusan SMK Teknik Instalasi Tenaga Listrik berpengalaman dalam <strong class="text-white">perakitan panel 3-Phase</strong>, pengawatan <strong class="text-white">Rectifier/Battery Charger S-PRO3</strong>, integrasi transformator, MCCB, serta pengujian sistem tenaga dengan standar tinggi keselamatan <strong class="text-amberGold-400">K3 Listrik</strong>.
+                    </p>
+
+                    <!-- Key highlights badges -->
+                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start pt-2">
+                        <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-mono flex items-center gap-1.5">
+                            <i class="fa-solid fa-microchip text-electric-400"></i> Panel Rectifier & Inverter
+                        </span>
+                        <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-mono flex items-center gap-1.5">
+                            <i class="fa-solid fa-diagram-project text-amberGold-400"></i> Wiring Interkoneksi 3-Phase
+                        </span>
+                        <span class="bg-slate-900/80 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-mono flex items-center gap-1.5">
+                            <i class="fa-solid fa-shield-halved text-emerald-400"></i> K3 Listrik & Standard OHS
+                        </span>
+                    </div>
+
+                    <!-- Call To Action -->
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#kontak" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-electric-600 hover:bg-electric-500 text-white font-bold text-sm shadow-lg shadow-electric-600/30 hover:scale-[1.02] transition-all">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span>Rekrut / Kirim Penawaran</span>
+                        </a>
+                        <a href="#galeri" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-500 text-slate-200 font-semibold text-sm hover:bg-slate-800 transition-all">
+                            <i class="fa-solid fa-images text-electric-400"></i>
+                            <span>Dokumentasi Proyek Lapangan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Profile Visual / Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Card Border Gradient -->
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-electric-500 via-amberGold-500 to-cyan-500 blur opacity-40 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        
+                        <div class="relative bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl">
+                            <!-- Image Frame -->
+                            <div class="relative rounded-2xl overflow-hidden mb-6 bg-slate-950 aspect-[4/5] border border-slate-800">
+                                <img src="foto/foto_1.jpeg" 
+                                     alt="Aditia Nugraha - Teknik Instalasi Listrik" 
+                                     class="w-full h-full object-cover object-center"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/400x500/0f172a/0ea5e9?text=Aditia+Nugraha+Photo';">
+                                
+                                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4">
+                                    <p class="text-xs font-mono text-electric-400 uppercase font-semibold">Sertifikasi & Kualifikasi Valid</p>
+                                    <p class="text-sm font-bold text-white">SMKN 9 Garut - Instalasi Tenaga Listrik</p>
+                                </div>
+                            </div>
+
+                            <!-- Quick Stats Grid -->
+                            <div class="grid grid-cols-2 gap-3 text-center">
+                                <div class="bg-slate-950/80 border border-slate-800/80 p-3 rounded-xl">
+                                    <div class="text-xs text-slate-400 mb-1">Pengalaman Praktik</div>
+                                    <div class="text-lg font-bold text-electric-400">Industri & PLN</div>
+                                </div>
+                                <div class="bg-slate-950/80 border border-slate-800/80 p-3 rounded-xl">
+                                    <div class="text-xs text-slate-400 mb-1">Status Pekerja</div>
+                                    <div class="text-lg font-bold text-amberGold-400">Siap Kerja Segera</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFIL & DATA DIRI SECTION -->
+    <section id="profil" class="py-16 bg-slate-900/50 border-y border-slate-800/80 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-mono font-semibold uppercase tracking-widest text-electric-400">Overview HRD / Rekruter</h2>
+                <p class="text-3xl font-extrabold text-white mt-2">Profil Ringkas & Kompetensi Utama</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-electric-500 to-amberGold-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left: Personal Data Info Card -->
+                <div class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                    <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2 border-b border-slate-800 pb-3">
+                        <i class="fa-solid fa-id-card text-electric-400"></i> Data Pribadi Pelamar
+                    </h3>
+
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex justify-between items-center py-2 border-b border-slate-800/60">
+                            <span class="text-slate-400">Nama Lengkap</span>
+                            <span class="font-semibold text-white">Aditia Nugraha</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2 border-b border-slate-800/60">
+                            <span class="text-slate-400">Tanggal Lahir</span>
+                            <span class="font-semibold text-white">21 April 2007</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2 border-b border-slate-800/60">
+                            <span class="text-slate-400">Pendidikan Utama</span>
+                            <span class="font-semibold text-white text-right">SMKN 9 Garut<br><span class="text-xs font-normal text-slate-400">(Teknik Instalasi Tenaga Listrik)</span></span>
+                        </li>
+                        <li class="flex justify-between items-center py-2 border-b border-slate-800/60">
+                            <span class="text-slate-400">Domisili Utama</span>
+                            <span class="font-semibold text-white">Bayongbong, Garut, Jawa Barat</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2 border-b border-slate-800/60">
+                            <span class="text-slate-400">Kontak Telepon / WA</span>
+                            <span class="font-mono text-electric-400">+62 858-6246-8075</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2">
+                            <span class="text-slate-400">Alamat Email</span>
+                            <span class="font-mono text-electric-400 text-xs">aditianugraha382@gmail.com</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-6 p-4 rounded-xl bg-slate-950 border border-slate-800/80">
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            <i class="fa-solid fa-quote-left text-amberGold-400 mr-1"></i> Memiliki etos kerja tinggi, kedisiplinan lapangan, ketelitian membaca wiring schematic diagram, serta komitmen penuh terhadap implementasi K3 di lingkungan kerja kelistrikan industri.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Technical Skills & Tools -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                        <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2 border-b border-slate-800 pb-3">
+                            <i class="fa-solid fa-screwdriver-wrench text-amberGold-400"></i> Keterampilan Teknis & Alat Ukur
+                        </h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Skill 1 -->
+                            <div class="p-4 bg-slate-950/70 border border-slate-800 rounded-xl">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-lg bg-electric-500/10 border border-electric-500/30 flex items-center justify-center text-electric-400">
+                                        <i class="fa-solid fa-diagram-project"></i>
+                                    </div>
+                                    <h4 class="font-bold text-white text-sm">Wiring Panel 3-Phase & Kontrol</h4>
+                                </div>
+                                <p class="text-xs text-slate-400">Perakitan busbar, MCCB, Inverter, Rectifier, Kontak Relay, Terminal Block, dan Pengabelan S-PRO3 110-50A.</p>
+                            </div>
+
+                            <!-- Skill 2 -->
+                            <div class="p-4 bg-slate-950/70 border border-slate-800 rounded-xl">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-lg bg-amberGold-500/10 border border-amberGold-500/30 flex items-center justify-center text-amberGold-400">
+                                        <i class="fa-solid fa-[#fa-file-lines] fa-file-invoice"></i>
+                                    </div>
+                                    <h4 class="font-bold text-white text-sm">Pembacaan Diagram / Schematic</h4>
+                                </div>
+                                <p class="text-xs text-slate-400">Mampu menganalisis skema kelistrikan interkoneksi, tata letak jalur kabel daya, serta rangkaian kontrol otomatis.</p>
+                            </div>
+
+                            <!-- Skill 3 -->
+                            <div class="p-4 bg-slate-950/70 border border-slate-800 rounded-xl">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                                        <i class="fa-solid fa-gauge-high"></i>
+                                    </div>
+                                    <h4 class="font-bold text-white text-sm">Alat Ukur & Pengujian</h4>
+                                </div>
+                                <p class="text-xs text-slate-400">Pengoperasian Multimeter Digital/Analog, Clamp Meter (Tang Ampere), Pengujian Kontinuitas, Tegangan R-S-T & Beban.</p>
+                            </div>
+
+                            <!-- Skill 4 -->
+                            <div class="p-4 bg-slate-950/70 border border-slate-800 rounded-xl">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                                        <i class="fa-solid fa-hard-hat"></i>
+                                    </div>
+                                    <h4 class="font-bold text-white text-sm">Prosedur K3 Listrik & APD</h4>
+                                </div>
+                                <p class="text-xs text-slate-400">Penerapan standar keselamatan kerja teknisi, penggunaan Sarung Tangan Isolasi, Helm Safety, Boot Listrik, & LOTO.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PENGALAMAN KERJA & PROJECT PORTFOLIO SECTION -->
+    <section id="pengalaman" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-mono font-semibold uppercase tracking-widest text-amberGold-400">Rekam Jejak Praktik & Lapangan</h2>
+                <p class="text-3xl font-extrabold text-white mt-2">Pengalaman Kerja & Industri</p>
+                <p class="text-slate-400 text-sm mt-2">Detail peran teknis yang pernah dilaksanakan dalam proyek industri manufaktur panel dan PLN</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-amberGold-500 to-electric-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="space-y-8">
+                
+                <!-- Experience 1: PT. Sarana Andalan Elektrikal -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-electric-500/50 transition-all duration-300 shadow-xl group">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-800 pb-6 mb-6">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-electric-500/10 text-electric-400 text-xs font-mono font-semibold mb-2">
+                                <i class="fa-solid fa-industry"></i> Manufaktur & Perakitan Panel Listrik
+                            </div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-electric-400 transition-colors">PT. SARANA ANDALAN ELEKTRIKAL</h3>
+                            <p class="text-slate-300 font-medium text-sm">Posisi: <span class="text-amberGold-400 font-semibold">Operator Wiring Panel</span></p>
+                        </div>
+                        <div class="text-left lg:text-right">
+                            <span class="inline-block px-4 py-1.5 bg-slate-950 border border-slate-800 rounded-full text-xs font-mono text-slate-300">
+                                <i class="fa-regular fa-calendar mr-1.5 text-electric-400"></i> Pengalaman Industri Teknis
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div class="lg:col-span-2 space-y-3">
+                            <h4 class="text-xs font-mono uppercase text-slate-400 tracking-wider">Tanggung Jawab & Hasil Kerja Teknis:</h4>
+                            <ul class="space-y-2.5 text-sm text-slate-300">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-electric-400 mt-1 text-xs"></i>
+                                    <span><strong>Pengawatan Panel Rectifier / Battery Charger (S-PRO3 110-50A):</strong> Melakukan instalasi kabel interkoneksi modul kontrol PCB, relay indikator, busbar, dan terminal output baterai.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-electric-400 mt-1 text-xs"></i>
+                                    <span><strong>Perakitan Panel 3-Phase & Transformator E-VOLT:</strong> Memasang transformator step-down/step-up 380V, penyambungan terminal daya, pemutusan arus MCCB, serta pengabelan kabel kontrol berpenampang besar.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-electric-400 mt-1 text-xs"></i>
+                                    <span><strong>Pengujian & Quality Control (QC) Pengawatan:</strong> Menguji kelancaran aliran listrik dan keterhubungan antar terminal dengan Multimeter/Clamp Meter sebelum unit panel didistribusikan.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-electric-400 mt-1 text-xs"></i>
+                                    <span><strong>K3 & Kerapihan Wiring (Cable Management):</strong> Menyusun jalur kabel menggunakan spiral wrap, ducting panel, dan kabel skun secara rapi sesuai standar industri modern.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Technical Spec Badge Box -->
+                        <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-5 flex flex-col justify-between">
+                            <div>
+                                <p class="text-xs font-mono text-amberGold-400 font-bold uppercase mb-2">Komponen Industri Yang Ditangani:</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded text-xs text-slate-300">Rectifier S-PRO3</span>
+                                    <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded text-xs text-slate-300">Trafo E-VOLT 380V</span>
+                                    <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded text-xs text-slate-300">MCCB Battery & Load</span>
+                                    <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded text-xs text-slate-300">Relay & Control Module</span>
+                                    <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded text-xs text-slate-300">Busbar Tembaga</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-square-poll-vertical text-emerald-400"></i> Tingkat Ketelitian Wiring Tinggi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2: PT PLN (Persero) Cikajang -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-amberGold-500/50 transition-all duration-300 shadow-xl group">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-800 pb-6 mb-6">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amberGold-500/10 text-amberGold-400 text-xs font-mono font-semibold mb-2">
+                                <i class="fa-solid fa-plug"></i> Utilitas Listrik & Pelayanan Lapangan
+                            </div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-amberGold-400 transition-colors">PT PLN (PERSERO) ULP CIKAJANG</h3>
+                            <p class="text-slate-300 font-medium text-sm">Posisi: <span class="text-electric-400 font-semibold">Praktik Lapangan / Metering & Billing System</span></p>
+                        </div>
+                        <div class="text-left lg:text-right">
+                            <span class="inline-block px-4 py-1.5 bg-slate-950 border border-slate-800 rounded-full text-xs font-mono text-slate-300">
+                                <i class="fa-regular fa-calendar mr-1.5 text-amberGold-400"></i> Pengalaman Kelistrikan Lapangan
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div class="lg:col-span-2 space-y-3">
+                            <h4 class="text-xs font-mono uppercase text-slate-400 tracking-wider">Tanggung Jawab & Pengalaman Lapangan:</h4>
+                            <ul class="space-y-2.5 text-sm text-slate-300">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-amberGold-400 mt-1 text-xs"></i>
+                                    <span><strong>Inspeksi & Pembacaan kWh Meter Pelanggan:</strong> Melakukan pencatatan, pemantauan angka stroom meter digital/pascabayar, serta verifikasi pemakaian daya listrik pelanggan.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-amberGold-400 mt-1 text-xs"></i>
+                                    <span><strong>Penanganan Gangguan & Pengecekan Sambungan:</strong> Membantu tim teknis dalam memeriksa kontinuitas sambungan kawat pelayanan, MCB kWh meter, dan terminal pelanggan.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-amberGold-400 mt-1 text-xs"></i>
+                                    <span><strong>Administrasi Billing Sistem Kelistrikan:</strong> Memahami alur kerja sistem distribusi, billing, serta verifikasi kelayakan segel kWh meter PLN.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Highlights Box -->
+                        <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-5 flex flex-col justify-between">
+                            <div>
+                                <p class="text-xs font-mono text-electric-400 font-bold uppercase mb-2">Aktivitas Utama Lapangan:</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded text-xs text-slate-300">Auditing kWh Meter</span>
+                                    <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded text-xs text-slate-300">MCB Inspection</span>
+                                    <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded text-xs text-slate-300">Pencatatan Billing</span>
+                                    <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded text-xs text-slate-300">Edukasi Pelanggan</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-users text-electric-400"></i> Komunikasi & Pelayanan Pelanggan Baik
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERI KERJA & DOKUMENTASI SEKSI -->
+    <section id="galeri" class="py-20 bg-slate-900/40 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-mono font-semibold uppercase tracking-widest text-electric-400">Dokumentasi Nyata Pekerjaan</h2>
+                <p class="text-3xl font-extrabold text-white mt-2">Galeri Foto Praktik & Perakitan Panel</p>
+                <p class="text-slate-400 text-sm mt-2">Bukti pengerjaan langsung panel daya, pengawatan interkoneksi, dan pengujian alat ukur</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-electric-500 to-amberGold-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Gallery Card 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-electric-500 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-950">
+                            <img src="foto/pengerjan_wahiring.jpeg" 
+                                 alt="Aditia Nugraha Teknisi Wiring Panel" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/0ea5e9?text=Perakitan+Wiring+Panel';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-slate-950/80 backdrop-blur border border-electric-500/40 rounded text-[10px] font-mono text-electric-400 uppercase">
+                                Panel Rectifier
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-white text-base group-hover:text-electric-400 transition-colors">Wiring Interkoneksi & Modul Control</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Perakitan wiring komponen internal panel rectifier, penyambungan kabel kontrol PCB, relay indikator, dan terminal block interkoneksi secara terstruktur.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <span class="text-[11px] font-mono text-slate-500 flex items-center gap-1">
+                            <i class="fa-solid fa-tag text-amberGold-400"></i> PT. Sarana Andalan Elektrikal
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Gallery Card 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amberGold-500 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-950">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczND5Wv8d_-q3o7t_8L0aT9I0w-q3xM" 
+                                 alt="Panel Battery Charger S-PRO3" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/f59e0b?text=Panel+Rectifier+S-PRO3';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-slate-950/80 backdrop-blur border border-amberGold-500/40 rounded text-[10px] font-mono text-amberGold-400 uppercase">
+                                Rectifier / Charger
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-white text-base group-hover:text-amberGold-400 transition-colors">Display Panel Rectifier S-PRO3 (110V - 50A)</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Pengawasan dan pemasangan panel pengisi baterai industri (Battery Charger) type S-PRO3 dengan sistem kontrol analog/digital voltage meter & ampere meter.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <span class="text-[11px] font-mono text-slate-500 flex items-center gap-1">
+                            <i class="fa-solid fa-tag text-electric-400"></i> Industri Charger S-PRO3
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Gallery Card 3 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-950">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczND40z3vR9yI_w3o9Y8_Z1Xm" 
+                                 alt="MCCB Battery Load Output Wiring" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/10b981?text=Terminal+and+MCCB+Wiring';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-slate-950/80 backdrop-blur border border-emerald-500/40 rounded text-[10px] font-mono text-emerald-400 uppercase">
+                                High Current Circuit
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-white text-base group-hover:text-emerald-400 transition-colors">Terminal & Busbar High Current Wiring</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Pengabelan kabel arus besar menuju MCCB Battery & Output Load, dilengkapi selongsong isolasi pelindung serta skun kabel standar keamanan tinggi.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <span class="text-[11px] font-mono text-slate-500 flex items-center gap-1">
+                            <i class="fa-solid fa-tag text-amberGold-400"></i> MCCB & Busbar Integration
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Gallery Card 4 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-cyan-500 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-950">
+                            <img src="foto/trafo.jpeg" 
+                                 alt="Pemasangan Trafo 380V E Volt" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/06b6d4?text=Trafo+E-VOLT+380V';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-slate-950/80 backdrop-blur border border-cyan-500/40 rounded text-[10px] font-mono text-cyan-400 uppercase">
+                                Transformer System
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-white text-base group-hover:text-cyan-400 transition-colors">Pemasangan Integrasi Trafo 380V (E VOLT)</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Penataan serta penyambungan terminal transformator tipe E VOLT dalam struktur rangka panel, memastikan ground dan polaritas fasa terpasang presisi.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <span class="text-[11px] font-mono text-slate-500 flex items-center gap-1">
+                            <i class="fa-solid fa-tag text-cyan-400"></i> Heavy Duty Transformer
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Gallery Card 5 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-electric-500 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-950">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczN9m8L7k6J5h4G3f2E1" 
+                                 alt="Workshop Perakitan Panel" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/0ea5e9?text=Workshop+Panel+Assembly';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-slate-950/80 backdrop-blur border border-electric-500/40 rounded text-[10px] font-mono text-electric-400 uppercase">
+                                Workshop Area
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-white text-base group-hover:text-electric-400 transition-colors">Workshop Perakitan Framework Panel</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Pengkondisian layout kabinet panel metal, pemasangan dudukan komponen (DIN rail/mounting plate), dan kesiapan jalur kawat utama.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <span class="text-[11px] font-mono text-slate-500 flex items-center gap-1">
+                            <i class="fa-solid fa-tag text-emerald-400"></i> Assembly Line
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Gallery Card 6 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amberGold-500 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-950">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczP9o8I7u6T5r4E3w2Q1" 
+                                 alt="Pengujian Multimeter dan Measurement" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/f59e0b?text=Pengujian+Multimeter';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-slate-950/80 backdrop-blur border border-amberGold-500/40 rounded text-[10px] font-mono text-amberGold-400 uppercase">
+                                QC & Testing
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-white text-base group-hover:text-amberGold-400 transition-colors">Pengujian Multimeter & Kontinuitas</h3>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Proses verifikasi sambungan fasa R-S-T, ketepatan hambatan isolasi, serta tes keterhubungan probe pada terminal distribusi panel.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <span class="text-[11px] font-mono text-slate-500 flex items-center gap-1">
+                            <i class="fa-solid fa-tag text-amberGold-400"></i> Precision Measurement
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SIMULATOR & KALKULATOR TEKNIS INTERAKTIF -->
+    <section id="kalkulator" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric-500/10 text-electric-400 text-xs font-mono font-semibold mb-2">
+                    <i class="fa-solid fa-calculator"></i> DEMO TEKNIS UTAMA
+                </div>
+                <h2 class="text-3xl font-extrabold text-white">Kalkulator Power 3-Phase & Simulator Status Panel</h2>
+                <p class="text-slate-400 text-sm mt-2">Alat interaktif untuk membuktikan pemahaman teknis perhitungan daya & pemantauan fasa listrik</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-electric-500 to-amberGold-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Tool 1: 3-Phase Electrical Calculator -->
+                <div class="lg:col-span-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                            <h3 class="font-bold text-white text-lg flex items-center gap-2">
+                                <i class="fa-solid fa-bolt text-amberGold-400"></i> Kalkulator Daya Listrik 3-Phase
+                            </h3>
+                            <span class="text-xs font-mono text-slate-400">P = √3 × V × I × Cos φ</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1">Tegangan Antar Fasa Line-to-Line (V):</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="range" id="inputVoltage" min="300" max="440" value="380" step="5" class="w-full accent-electric-500 bg-slate-950 h-2 rounded-lg">
+                                    <span id="displayVoltage" class="font-mono text-electric-400 font-bold w-16 text-right">380 V</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1">Arus Listrik Beban (I - Ampere):</label>
+                                <div class="flex items-center gap-3">
+                                    <input type="range" id="inputCurrent" min="1" max="100" value="25" step="1" class="w-full accent-electric-500 bg-slate-950 h-2 rounded-lg">
+                                    <span id="displayCurrent" class="font-mono text-electric-400 font-bold w-16 text-right">25 A</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1">Faktor Daya / Power Factor (Cos φ):</label>
+                                <select id="inputPF" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono rounded-xl p-3 focus:border-electric-500 focus:outline-none">
+                                    <option value="0.8">0.80 (Standar Motor Induksi / Industri)</option>
+                                    <option value="0.85" selected>0.85 (Standar Operasional Efisien)</option>
+                                    <option value="0.9">0.90 (Sistem Terkompensasi Kapasitor)</option>
+                                    <option value="0.95">0.95 (Sangat Efisien)</option>
+                                    <option value="1.0">1.00 (Beban Murni Resistif)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output Results Card -->
+                    <div class="mt-6 p-5 bg-slate-950 border border-slate-800 rounded-xl space-y-3">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-slate-400">Daya Aktif (P):</span>
+                            <span id="resultKW" class="font-mono text-emerald-400 font-extrabold text-lg">13.98 kW</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-slate-400">Daya Semu (S):</span>
+                            <span id="resultKVA" class="font-mono text-electric-400 font-bold">16.45 kVA</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xs border-t border-slate-800 pt-2">
+                            <span class="text-slate-400">Estimasi Ukuran Rekomendasi Breaker:</span>
+                            <span id="resultBreaker" class="font-mono text-amberGold-400 font-bold">MCCB 32 Ampere</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 2: Panel Voltage Tester & Simulator -->
+                <div class="lg:col-span-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                            <h3 class="font-bold text-white text-lg flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-electric-400"></i> Simulator Indikator Phase Panel (L1, L2, L3)
+                            </h3>
+                            <button onclick="resetSimulator()" class="text-xs font-mono text-slate-400 hover:text-white underline">Reset Test</button>
+                        </div>
+
+                        <p class="text-xs text-slate-400 mb-4">Simulasikan kondisi suplai tegangan fasa listrik panel untuk melihat status proteksi sistem:</p>
+
+                        <!-- Phase Status Grid -->
+                        <div class="grid grid-cols-3 gap-3 mb-6">
+                            <!-- Phase L1 (R) -->
+                            <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 text-center">
+                                <div class="text-xs font-mono font-bold text-red-500 mb-1">Fasa L1 (R)</div>
+                                <div id="indicatorL1" class="w-4 h-4 rounded-full bg-red-500 shadow-lg shadow-red-500/50 mx-auto mb-2 animate-pulse"></div>
+                                <div id="voltL1" class="font-mono text-xs text-white font-bold mb-2">220V</div>
+                                <button onclick="togglePhase('L1')" class="px-2 py-1 bg-slate-900 border border-slate-700 text-[10px] text-slate-300 rounded hover:bg-slate-800">Switch</button>
+                            </div>
+
+                            <!-- Phase L2 (S) -->
+                            <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 text-center">
+                                <div class="text-xs font-mono font-bold text-amberGold-400 mb-1">Fasa L2 (S)</div>
+                                <div id="indicatorL2" class="w-4 h-4 rounded-full bg-amberGold-400 shadow-lg shadow-amberGold-400/50 mx-auto mb-2 animate-pulse"></div>
+                                <div id="voltL2" class="font-mono text-xs text-white font-bold mb-2">220V</div>
+                                <button onclick="togglePhase('L2')" class="px-2 py-1 bg-slate-900 border border-slate-700 text-[10px] text-slate-300 rounded hover:bg-slate-800">Switch</button>
+                            </div>
+
+                            <!-- Phase L3 (T) -->
+                            <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 text-center">
+                                <div class="text-xs font-mono font-bold text-electric-400 mb-1">Fasa L3 (T)</div>
+                                <div id="indicatorL3" class="w-4 h-4 rounded-full bg-electric-400 shadow-lg shadow-electric-400/50 mx-auto mb-2 animate-pulse"></div>
+                                <div id="voltL3" class="font-mono text-xs text-white font-bold mb-2">220V</div>
+                                <button onclick="togglePhase('L3')" class="px-2 py-1 bg-slate-900 border border-slate-700 text-[10px] text-slate-300 rounded hover:bg-slate-800">Switch</button>
+                            </div>
+                        </div>
+
+                        <!-- System Status Box -->
+                        <div id="systemStatusCard" class="p-4 rounded-xl border bg-emerald-950/30 border-emerald-500/40 text-emerald-400 flex items-center gap-3">
+                            <i id="systemStatusIcon" class="fa-solid fa-circle-check text-2xl"></i>
+                            <div>
+                                <h4 id="systemStatusTitle" class="font-bold text-xs uppercase tracking-wide">Status System: NORMAL 3-PHASE BALANCED</h4>
+                                <p id="systemStatusDesc" class="text-[11px] text-slate-300">Tegangan antar fasa R-S-T seimbang (380V). Contactor utama & Rectifier S-PRO3 siap dioperasikan aman.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 text-[11px] font-mono text-slate-500 text-center">
+                        <i class="fa-solid fa-circle-info mr-1"></i> Klik tombol "Switch" untuk mensimulasikan kegagalan fasa (Phase Loss / Drop Voltage).
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK & FORM LAMARAN SEKSI -->
+    <section id="kontak" class="py-20 bg-slate-900/60 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Contact info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amberGold-500/10 text-amberGold-400 text-xs font-semibold">
+                        <i class="fa-solid fa-handshake"></i> PROSES REKRUTMEN HRD
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Siap Bergabung & Berkontribusi di Perusahaan Anda
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Jika Anda sedang mencari teknisi listrik yang handal, berpengalaman dalam wiring panel industri, siap ditempatkan segera, serta mematuhi K3, silakan hubungi saya secara langsung.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <a href="https://wa.me/6285862468075?text=Halo%20Aditia%20Nugraha,%20saya%20tertarik%20dengan%20portofolio%20Anda%20untuk%20posisi%20Teknisi/Operator%20Wiring." 
+                           target="_blank" 
+                           class="flex items-center gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500/60 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">WhatsApp / Telepon Direct</div>
+                                <div class="text-base font-bold text-white group-hover:text-emerald-400 font-mono">+62 858-6246-8075</div>
+                            </div>
+                        </a>
+
+                        <a href="mailto:aditianugraha382@gmail.com" 
+                           class="flex items-center gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-electric-500/60 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-electric-500/10 border border-electric-500/30 flex items-center justify-center text-electric-400 text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Kirim Surat / Penawaran Kerja via Email</div>
+                                <div class="text-base font-bold text-white group-hover:text-electric-400 font-mono text-sm sm:text-base">aditianugraha382@gmail.com</div>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <div class="w-12 h-12 rounded-xl bg-amberGold-500/10 border border-amberGold-500/30 flex items-center justify-center text-amberGold-400 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Alamat Domisili</div>
+                                <div class="text-sm font-bold text-white">Bayongbong, Garut, Jawa Barat (Siap Relokasi)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Application Interactive Form -->
+                <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+                    <h3 class="text-xl font-bold text-white mb-2">Formulir Undangan Wawancara / Rekrutmen</h3>
+                    <p class="text-xs text-slate-400 mb-6">Kirimkan pesan langsung ke WhatsApp Aditia Nugraha untuk proses seleksi lebih cepat</p>
+
+                    <form id="recruiterForm" onsubmit="handleRecruiterSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1.5">Nama Perusahaan / Peretas HRD *</label>
+                                <input type="text" id="companyName" required placeholder="PT. Nama Perusahaan" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-electric-500 focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1.5">Nama Rekruter / Pengirim *</label>
+                                <input type="text" id="recruiterName" required placeholder="Bapak / Ibu ..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-electric-500 focus:outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1.5">Nomor Telepon / WA Perusahaan *</label>
+                                <input type="tel" id="contactPhone" required placeholder="0812xxxxxxx" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-electric-500 focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1.5">Posisi Yang Ditawarkan *</label>
+                                <select id="jobPosition" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-electric-500 focus:outline-none transition-colors">
+                                    <option value="Operator Wiring Panel">Operator Wiring Panel</option>
+                                    <option value="Teknisi Listrik Industri">Teknisi Listrik Industri</option>
+                                    <option value="Maintenance Kelistrikan">Maintenance Kelistrikan / MEP</option>
+                                    <option value="Teknisi Quality Control Panel">Teknisi Quality Control Panel</option>
+                                    <option value="Posisi Lainnya">Posisi Lainnya</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono text-slate-300 mb-1.5">Pesan Undangan / Detil Pekerjaan</label>
+                            <textarea id="jobMessage" rows="3" placeholder="Tuliskan jadwal wawancara, lokasi penempatan, atau informasi awal pekerjaan..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-electric-500 focus:outline-none transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-sm tracking-wide shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>KIRIM UNDANGAN REKRUTMEN VIA WHATSAPP</span>
+                        </button>
+                    </form>
+
+                    <!-- Success Feedback Box (Hidden by default) -->
+                    <div id="formSuccessMessage" class="hidden mt-4 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500 text-emerald-300 text-center text-xs">
+                        <i class="fa-solid fa-circle-check text-lg mb-1 block text-emerald-400"></i>
+                        Pesan Anda siap dikirim! Tab WhatsApp sedang dibuka.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-bolt text-amberGold-400"></i>
+                <span class="font-bold text-slate-400">Aditia Nugraha</span> &copy; 2026. All Rights Reserved.
+            </div>
+            <div class="text-slate-500">
+                Teknik Instalasi Tenaga Listrik - SMKN 9 Garut
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on clicking nav links
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive 3-Phase Power Calculator
+        const inputVoltage = document.getElementById('inputVoltage');
+        const inputCurrent = document.getElementById('inputCurrent');
+        const inputPF = document.getElementById('inputPF');
+
+        const displayVoltage = document.getElementById('displayVoltage');
+        const displayCurrent = document.getElementById('displayCurrent');
+
+        const resultKW = document.getElementById('resultKW');
+        const resultKVA = document.getElementById('resultKVA');
+        const resultBreaker = document.getElementById('resultBreaker');
+
+        function calculatePower() {
+            const V = parseFloat(inputVoltage.value);
+            const I = parseFloat(inputCurrent.value);
+            const PF = parseFloat(inputPF.value);
+
+            displayVoltage.textContent = `${V} V`;
+            displayCurrent.textContent = `${I} A`;
+
+            // Power 3-Phase Equation: P = sqrt(3) * V * I * PF
+            const powerWatts = Math.sqrt(3) * V * I * PF;
+            const powerKW = (powerWatts / 1000).toFixed(2);
+            
+            // Apparent Power (S) in kVA = sqrt(3) * V * I / 1000
+            const powerKVA = ((Math.sqrt(3) * V * I) / 1000).toFixed(2);
+
+            // Suggested Breaker Size (Standard safety margin 125%)
+            const recommendedBreakerI = I * 1.25;
+            let breakerRating = 10;
+            if (recommendedBreakerI > 10) breakerRating = 16;
+            if (recommendedBreakerI > 16) breakerRating = 20;
+            if (recommendedBreakerI > 20) breakerRating = 25;
+            if (recommendedBreakerI > 25) breakerRating = 32;
+            if (recommendedBreakerI > 32) breakerRating = 40;
+            if (recommendedBreakerI > 40) breakerRating = 50;
+            if (recommendedBreakerI > 50) breakerRating = 63;
+            if (recommendedBreakerI > 63) breakerRating = 80;
+            if (recommendedBreakerI > 80) breakerRating = 100;
+            if (recommendedBreakerI > 100) breakerRating = 125;
+
+            resultKW.textContent = `${powerKW} kW`;
+            resultKVA.textContent = `${powerKVA} kVA`;
+            resultBreaker.textContent = `MCCB ${breakerRating} Ampere`;
+        }
+
+        inputVoltage.addEventListener('input', calculatePower);
+        inputCurrent.addEventListener('input', calculatePower);
+        inputPF.addEventListener('change', calculatePower);
+        
+        // Initial Calculation Run
+        calculatePower();
+
+        // 3-Phase Panel Simulator Logic
+        let phaseState = {
+            L1: true,
+            L2: true,
+            L3: true
+        };
+
+        function togglePhase(phase) {
+            phaseState[phase] = !phaseState[phase];
+            updateSimulatorUI();
+        }
+
+        function resetSimulator() {
+            phaseState = { L1: true, L2: true, L3: true };
+            updateSimulatorUI();
+        }
+
+        function updateSimulatorUI() {
+            const indL1 = document.getElementById('indicatorL1');
+            const indL2 = document.getElementById('indicatorL2');
+            const indL3 = document.getElementById('indicatorL3');
+
+            const voltL1 = document.getElementById('voltL1');
+            const voltL2 = document.getElementById('voltL2');
+            const voltL3 = document.getElementById('voltL3');
+
+            const statusCard = document.getElementById('systemStatusCard');
+            const statusTitle = document.getElementById('systemStatusTitle');
+            const statusDesc = document.getElementById('systemStatusDesc');
+            const statusIcon = document.getElementById('systemStatusIcon');
+
+            // L1 Status
+            if (phaseState.L1) {
+                indL1.className = 'w-4 h-4 rounded-full bg-red-500 shadow-lg shadow-red-500/50 mx-auto mb-2 animate-pulse';
+                voltL1.textContent = '220V';
+            } else {
+                indL1.className = 'w-4 h-4 rounded-full bg-slate-700 mx-auto mb-2';
+                voltL1.textContent = '0V (Drop)';
+            }
+
+            // L2 Status
+            if (phaseState.L2) {
+                indL2.className = 'w-4 h-4 rounded-full bg-amberGold-400 shadow-lg shadow-amberGold-400/50 mx-auto mb-2 animate-pulse';
+                voltL2.textContent = '220V';
+            } else {
+                indL2.className = 'w-4 h-4 rounded-full bg-slate-700 mx-auto mb-2';
+                voltL2.textContent = '0V (Drop)';
+            }
+
+            // L3 Status
+            if (phaseState.L3) {
+                indL3.className = 'w-4 h-4 rounded-full bg-electric-400 shadow-lg shadow-electric-400/50 mx-auto mb-2 animate-pulse';
+                voltL3.textContent = '220V';
+            } else {
+                indL3.className = 'w-4 h-4 rounded-full bg-slate-700 mx-auto mb-2';
+                voltL3.textContent = '0V (Drop)';
+            }
+
+            // Evaluate Overall System Status
+            const activeCount = (phaseState.L1 ? 1 : 0) + (phaseState.L2 ? 1 : 0) + (phaseState.L3 ? 1 : 0);
+
+            if (activeCount === 3) {
+                statusCard.className = 'p-4 rounded-xl border bg-emerald-950/30 border-emerald-500/40 text-emerald-400 flex items-center gap-3';
+                statusIcon.className = 'fa-solid fa-circle-check text-2xl';
+                statusTitle.textContent = 'STATUS SYSTEM: NORMAL 3-PHASE BALANCED';
+                statusDesc.textContent = 'Tegangan antar fasa R-S-T seimbang (380V). Contactor utama & Rectifier S-PRO3 siap dioperasikan secara aman.';
+            } else if (activeCount > 0) {
+                statusCard.className = 'p-4 rounded-xl border bg-amber-950/40 border-amber-500/40 text-amber-400 flex items-center gap-3';
+                statusIcon.className = 'fa-solid fa-triangle-exclamation text-2xl';
+                statusTitle.textContent = 'WARNING: HILANG FASA / PHASE LOSS DETECTED';
+                statusDesc.textContent = `Terdeteksi ${3 - activeCount} fasa terputus! Phase Failure Relay akan memutus beban utama untuk mencegah kerusakan trafo/motor.`;
+            } else {
+                statusCard.className = 'p-4 rounded-xl border bg-rose-950/40 border-rose-500/40 text-rose-400 flex items-center gap-3';
+                statusIcon.className = 'fa-solid fa-plug-circle-xmark text-2xl';
+                statusTitle.textContent = 'ALARM: TOTAL POWER SHUTDOWN (0V)';
+                statusDesc.textContent = 'Suplai daya utama mati total. Sistem panel beralih ke baterai cadangan Emergency DC.';
+            }
+        }
+
+        // Handle Recruiter Form WhatsApp Submission
+        function handleRecruiterSubmit(event) {
+            event.preventDefault();
+
+            const company = document.getElementById('companyName').value;
+            const recruiter = document.getElementById('recruiterName').value;
+            const phone = document.getElementById('contactPhone').value;
+            const position = document.getElementById('jobPosition').value;
+            const message = document.getElementById('jobMessage').value;
+
+            const textMsg = `Halo Aditia Nugraha,%0A%0ASaya *${recruiter}* dari *${company}* (No Telp: ${phone}).%0A%0ASaya telah melihat web portofolio Anda dan ingin mengundang Anda untuk lamaran kerja posisi: *${position}*.%0A%0A*Pesan / Detail:*%0A${message || 'Silakan hubungi kami untuk tahapan wawancara/seleksi selanjutnya.'}`;
+
+            const waUrl = `https://wa.me/6285862468075?text=${textMsg}`;
+            
+            document.getElementById('formSuccessMessage').classList.remove('hidden');
+
+            setTimeout(() => {
+                window.open(waUrl, '_blank');
+            }, 800);
+        }
+
+        // Resume CV Download Action
+        function downloadCV() {
+            const cvNotice = document.createElement('div');
+            cvNotice.className = 'fixed bottom-6 right-6 bg-slate-900 border border-amberGold-500 text-white p-4 rounded-xl shadow-2xl z-50 text-xs flex items-center gap-3';
+            cvNotice.innerHTML = `
+                <i class="fa-solid fa-circle-info text-amberGold-400 text-lg"></i>
+                <div>
+                    <strong class="block font-bold">Mengunduh Curriculum Vitae...</strong>
+                    <span>File CV Aditia Nugraha (Teknik Instalasi Listrik) diproses.</span>
+                </div>
+            `;
+            document.body.appendChild(cvNotice);
+
+            setTimeout(() => {
+                cvNotice.remove();
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
